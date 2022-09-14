@@ -1,0 +1,22 @@
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  .label {
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  .input {
+    outline: none;
+    border: 1px solid #d0d5dd;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 17px;
+    color: #667085;
+
+    &::placeholder {
+      color: #c4c8cf;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.button,
+.google-button {
+  cursor: pointer;
+  width: 100%;
+  color: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  padding: 12px 0;
+  border-radius: 8px;
+  //   margin-top: 32px;
+  background-color: #5429ff;
+  &:hover {
+    background-color: #461ee7;
+  }
+}
+.google-button {
+  background-color: #fff;
+  color: #344054;
+  border: 1px solid #d0d5dd;
+  //   margin-top: 0;
+  //   margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0;
+  padding: 10px 0;
+  image {
+    width: 24px;
+  }
+  &:hover {
+    background-color: rgb(248, 245, 245);
+  }
+}

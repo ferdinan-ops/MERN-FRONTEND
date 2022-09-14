@@ -1,0 +1,45 @@
+.main-page {
+  display: flex;
+  height: 100%;
+  padding: 40px;
+}
+
+.left {
+  flex: 1;
+  position: relative;
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .contain {
+    display: flex;
+    height: 100%;
+    .register {
+      min-width: 360px;
+      margin: auto;
+      .register-form {
+        margin-top: 56px;
+      }
+    }
+  }
+}
+
+.right {
+  width: 768px;
+  background-color: #cbcce8;
+  border-radius: 40px;
+  display: flex;
+  .bg-image {
+    height: 100%;
+    margin: auto;
+  }
+}
