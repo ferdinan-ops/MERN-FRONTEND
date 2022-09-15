@@ -1,9 +1,16 @@
 .title {
-  font-size: 40px;
   color: #344054;
+  font-size: 40px;
+  @media (max-width: 768px) {
+    font-size: 32px;
+  }
 }
 
 .description {
-  color: #667085;
   margin-top: 8px;
+  color: #667085;
+  @media (max-width: 768px) {
+    font-size: 32px;
+    font-size: 14px;
+  }
 }

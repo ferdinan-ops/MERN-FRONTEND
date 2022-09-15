@@ -1,6 +1,6 @@
 import React from "react";
-import { authBg, google, logo } from "../../assets";
-import { Button, Gap, Input, Link, Title } from "../../components";
+import { authBg, logo } from "../../assets";
+import { Button, Gap, Input, Linked, Title } from "../../components";
 import "./register.scss";
 
 export default function Register() {
@@ -12,26 +12,24 @@ export default function Register() {
           <span>PNFT Market</span>
         </a>
 
-        <div className="contain">
-          <div className="register">
-            <Title
-              title="NFT Access"
-              desc="Please fill your detail to access your account."
-            />
-            <form className="register-form">
-              <Input label="Username" placeholder="Username" />
-              <Gap height={20} />
-              <Input label="Email" type="email" placeholder="Email" />
-              <Gap height={20} />
-              <Input label="Password" type="password" placeholder="Password" />
-              <Gap height={32} />
-              <Button title="Register" type="submit" />
-              {/* <Button title="Sign in with Google" isGoogle /> */}
-            </form>
+        <div className="register">
+          <Title
+            title="Register"
+            desc="Please fill your detail to access your account"
+          />
 
+          <form className="register-form">
+            <Input label="Username" placeholder="Username" />
             <Gap height={20} />
-            <Link title="Already have an Account?" link="Login" path="/login" />
-          </div>
+            <Input label="Email" type="email" placeholder="Email" />
+            <Gap height={20} />
+            <Input label="Password" type="password" placeholder="Password" />
+            <Gap height={32} />
+            <Button title="Register" type="submit" />
+          </form>
+
+          <Gap height={20} />
+          <Linked title="Already have an Account?" link="Login" path="/login" />
         </div>
       </div>
 
@@ -41,10 +39,3 @@ export default function Register() {
     </section>
   );
 }
-
-/* 
-Folder atoms adlh folder yang menyimpan komponen yang paling kecil dalam sebuah aplikasi. Pada folder itu kita dapat membuat komponen Input, Button, Gap disitu yang mungkin akan dipakai oleh halaman atau komponen lainnya.
-
-Ingat!! 
-Seluruh komponen yang ingin digunakan kembali seperti komponen pada folder atom ini tidak boleh memiliki margin karena akan digunakan oleh komponen lain. Nah, untuk mengatasi hal tersebut kita dapat membuat satu komponen baru yang berguna sebagai komponen kosong yang menerima tinggi atau lebar sehingga kita tidak perlu margin seperti komponen Gap.
-*/

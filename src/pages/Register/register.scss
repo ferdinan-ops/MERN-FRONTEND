@@ -1,45 +1,70 @@
 .main-page {
   display: flex;
   height: 100%;
+  width: 100%;
   padding: 40px;
+  box-sizing: border-box;
+
+  @media (max-width: 1080px) {
+    padding: 5%;
+  }
 }
 
 .left {
   flex: 1;
+  height: 100%;
+  display: flex;
   position: relative;
 
+  @media (max-width: 1080px) {
+    flex-direction: column;
+  }
+
   .brand {
-    display: flex;
-    align-items: center;
+    top: 0;
+    left: 0;
     gap: 12px;
-    text-decoration: none;
+    display: flex;
     color: black;
     font-weight: 500;
     position: absolute;
-    top: 0;
-    left: 0;
+    align-items: center;
+    text-decoration: none;
+    @media (max-width: 1080px) {
+      flex-direction: column;
+      position: static;
+      margin-bottom: 56px;
+    }
   }
 
-  .contain {
-    display: flex;
-    height: 100%;
-    .register {
-      min-width: 360px;
-      margin: auto;
-      .register-form {
-        margin-top: 56px;
-      }
+  .register {
+    margin: auto;
+    min-width: 360px;
+
+    .register-form {
+      margin-top: 56px;
+    }
+
+    @media (max-width: 1080px) {
+      flex: none;
+      min-width: 0;
+      width: 100%;
     }
   }
 }
 
 .right {
   width: 768px;
-  background-color: #cbcce8;
-  border-radius: 40px;
   display: flex;
+  border-radius: 40px;
+  background-color: #cbcce8;
+
   .bg-image {
     height: 100%;
     margin: auto;
+  }
+
+  @media (max-width: 1080px) {
+    display: none;
   }
 }

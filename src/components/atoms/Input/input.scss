@@ -3,17 +3,25 @@
   flex-direction: column;
 
   .label {
+    color: #344054;
     font-weight: 500;
     margin-bottom: 8px;
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
   }
 
   .input {
     outline: none;
-    border: 1px solid #d0d5dd;
-    border-radius: 8px;
-    padding: 10px 14px;
     font-size: 17px;
     color: #667085;
+    border-radius: 8px;
+    padding: 10px 14px;
+    border: 1px solid #d0d5dd;
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
 
     &::placeholder {
       color: #c4c8cf;
