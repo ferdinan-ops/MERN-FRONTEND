@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Home, Login, Register } from "../../pages";
+import { Login, MainApp, Register } from "../../pages";
 
 export default function Router() {
   return (
@@ -7,7 +7,7 @@ export default function Router() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/" element={<Home />} />
+        <Route path="/*" element={<MainApp />} />
       </Routes>
     </BrowserRouter>
   );

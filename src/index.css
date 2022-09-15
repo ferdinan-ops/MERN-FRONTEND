@@ -4,13 +4,14 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  /* outline: 1px solid red; */
 }
 
 html,
 body,
 .app,
 #root {
-  height: 100%;
+  min-height: 100%;
   min-width: 100%;
 }
 

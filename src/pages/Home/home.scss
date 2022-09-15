@@ -1,0 +1,15 @@
+.home-page-wrapper {
+  padding: 40px 0;
+  .create-wrapper {
+    margin-left: auto;
+    width: 200px;
+  }
+
+  .content-wrapper {
+    margin-top: 40px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
