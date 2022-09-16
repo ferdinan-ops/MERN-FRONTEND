@@ -1,11 +1,23 @@
+.header.scroll {
+  backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.603);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
   height: 75px;
   padding: 0 9%;
   font-weight: 600;
-  border: 1px solid #ddd;
+  background-color: #fff;
+  transition: 0.3s ease;
 
   .brand {
     gap: 12px;

@@ -1,6 +1,7 @@
 import authBg from "./image/auth-bg.svg";
 import logo from "./image/logo.svg";
 import blogImg from "./image/blog-img.jpg";
+import imageUpload from "./image/image-upload.png";
 
 // icon
 import google from "./icon/google.svg";
@@ -20,4 +21,5 @@ export {
   github,
   linkedin,
   blogImg,
+  imageUpload,
 };

@@ -1,10 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { blogImg } from "../../../assets";
 import "./blogItem.scss";
 
 export default function BlogItem() {
+  const navigate = useNavigate();
   return (
-    <div className="blog-item">
+    <div className="blog-item" onClick={() => navigate("/detail-blog")}>
       <img src={blogImg} alt="post" className="image-thumb" />
       <div className="content-detail">
         <p className="title">Title Blog</p>
