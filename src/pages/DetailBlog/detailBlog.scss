@@ -20,5 +20,9 @@
     font-size: 18px;
     line-height: 36px;
     padding-bottom: 50px;
+
+    @media (max-width: 768px) {
+      font-size: 17px;
+    }
   }
 }

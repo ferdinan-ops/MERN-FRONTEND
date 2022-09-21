@@ -19,6 +19,10 @@
 
     img {
       width: 96px;
+
+      @media (max-width: 768px) {
+        width: 68px;
+      }
     }
   }
 
@@ -26,5 +30,9 @@
     font-size: 18px;
     font-weight: 500;
     color: #667085;
+
+    @media (max-width: 768px) {
+      font-size: 15px;
+    }
   }
 }

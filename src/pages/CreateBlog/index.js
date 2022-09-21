@@ -7,9 +7,9 @@ export default function CreateBlog() {
     <form className="create-blog">
       <h4 className="title">Create New Blog</h4>
       <Gap height={20} />
-      <Input label="Post Title" />
+      <Input label="Title" />
       <Gap height={30} />
-      <p className="label">Post Content</p>
+      <p className="label">Content</p>
       <TinyEditor />
       <Gap height={30} />
       <Upload />

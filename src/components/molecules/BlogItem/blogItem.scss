@@ -5,6 +5,15 @@
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   margin-bottom: 40px;
   transition: 0.3s ease-in-out;
+  max-height: 507px;
+
+  @media (max-width: 1024px) {
+    width: 47.5%;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 
   &:hover {
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
@@ -32,6 +41,15 @@
     }
     .body {
       margin-top: 18px;
+      overflow: hidden;
+      line-height: 2rem;
+      max-height: 8rem;
+      -webkit-box-orient: vertical;
+      display: block;
+      display: -webkit-box;
+      overflow: hidden !important;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 4;
     }
   }
 }

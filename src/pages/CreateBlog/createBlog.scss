@@ -3,6 +3,11 @@
   max-width: 80%;
   margin: 0 auto;
 
+  @media (max-width: 768px) {
+    max-width: unset;
+    width: 100%;
+  }
+
   .title {
     font-size: 32px;
     text-align: center;
@@ -23,6 +28,7 @@
     color: #344054;
     font-weight: 500;
     margin-bottom: 8px;
+
     @media (max-width: 768px) {
       font-size: 14px;
     }

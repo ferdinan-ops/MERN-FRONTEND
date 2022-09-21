@@ -1,6 +1,7 @@
 footer {
   border-top: 1px solid #ddd;
   padding: 45px 9%;
+
   .copyright {
     width: 100%;
     border-top: 1px solid #ddd;
@@ -16,6 +17,12 @@ footer {
 .footer {
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 50px;
+  }
+
   .brand {
     a {
       display: flex;
@@ -27,15 +34,23 @@ footer {
       img {
         height: 70px;
       }
+
       span {
         font-weight: bold;
         font-size: 24px;
       }
     }
   }
+
   .links {
     display: flex;
     gap: 200px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 50px;
+    }
+
     .categories,
     .contact,
     .social {
