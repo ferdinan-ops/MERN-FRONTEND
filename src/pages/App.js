@@ -1,7 +1,8 @@
-import { Router } from "../config";
+import { Router, store } from "../config";
 import "prismjs/themes/prism-z-toch.css";
 import Prism from "prismjs";
 import { useEffect } from "react";
+import { Provider } from "react-redux";
 
 function App() {
   useEffect(() => {
@@ -10,7 +11,9 @@ function App() {
 
   return (
     <div className="app">
-      <Router />
+      <Provider store={store}>
+        <Router />
+      </Provider>
     </div>
   );
 }

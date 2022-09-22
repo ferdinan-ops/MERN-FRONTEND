@@ -22,7 +22,7 @@ export default function Header() {
     <header className={`header ${top ? "" : "scroll"}`}>
       <Link to="/" className="brand">
         <img src={logo} alt="logo" />
-        <span>PNFT Market</span>
+        <span>ferdinan.</span>
       </Link>
       <p className="logout" onClick={() => navigate("/login")}>
         Logout

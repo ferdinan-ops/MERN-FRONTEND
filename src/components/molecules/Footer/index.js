@@ -20,7 +20,7 @@ export default function Footer() {
         <div className="brand">
           <a href="/">
             <img src={logo} alt="logo" />
-            <span>PNFT Market</span>
+            <span>ferdinan.</span>
           </a>
         </div>
         <div className="links">

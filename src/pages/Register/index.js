@@ -9,7 +9,7 @@ export default function Register() {
       <div className="left">
         <a href="/" className="brand">
           <img src={logo} alt="logo" className="logo" />
-          <span>PNFT Market</span>
+          <span>ferdinan.</span>
         </a>
 
         <div className="register">
