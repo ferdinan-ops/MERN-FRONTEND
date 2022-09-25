@@ -1,5 +1,5 @@
-const globalState = { user: {} };
-const globalReducer = (state = globalState, action) => {
+const initialState = { user: {} };
+const globalReducer = (state = initialState, action) => {
   switch (action.type) {
     case "UPDATE_USER":
       return { ...state, user: action.payload };

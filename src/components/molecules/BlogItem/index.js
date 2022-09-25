@@ -14,7 +14,7 @@ export default function BlogItem({ title, author, updatedAt, body, img }) {
         <p className="author">
           {author.name} &bull; <Moment fromNow>{updatedAt}</Moment>
         </p>
-        <p className="body">{body}</p>
+        <div className="body" dangerouslySetInnerHTML={{ __html: body }} />
       </div>
     </div>
   );

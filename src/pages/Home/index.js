@@ -21,7 +21,7 @@ export default function Home() {
 
   const nextHandler = (e) => {
     e.preventDefault();
-    setCounter(counter + 1);
+    setCounter(counter >= page.total_page ? page.total_page : counter + 1);
   };
 
   useEffect(() => {

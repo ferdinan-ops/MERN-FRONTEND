@@ -1,10 +1,10 @@
-const homeState = {
+const initialState = {
   blogs: [],
   page: { current_page: 1, total_page: 1 },
   user: {},
 };
 
-const homeReducer = (state = homeState, action) => {
+const homeReducer = (state = initialState, action) => {
   switch (action.type) {
     case "UPDATE_BLOG":
       return { ...state, blogs: action.payload };

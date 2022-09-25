@@ -1,16 +1,13 @@
 import React from "react";
 import { Editor } from "@tinymce/tinymce-react";
 
-export default function TinyEditor({ content, setContent }) {
+export default function TinyEditor({ ...rest }) {
   return (
     <>
       <Editor
         id="FIXED_ID"
         apiKey="hx13dzsnd0w3pdkmb5180tdrj6mwu2vmfa04odeeq9pphqi9"
-        //   onEditorChange={(newValue) => {
-        //     setContent(newValue);
-        //   }}
-        //   value={content}
+        {...rest}
         init={{
           height: 500,
           menubar: false,
