@@ -13,7 +13,6 @@ export default function DetailBlog() {
   const { blog } = useSelector((state) => state.detailBlogReducer);
   const img_url = `${process.env.REACT_APP_API_URL}/${blog.image}`;
 
-  console.log(blog);
   useEffect(() => {
     dispatch(getBlogById(id));
   }, [dispatch, id]);
