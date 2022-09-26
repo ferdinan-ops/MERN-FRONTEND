@@ -1,41 +1,44 @@
 import React from "react";
 import "./detailBlog.scss";
-import { blogImg } from "../../assets";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getBlogById } from "../../config/redux/action";
+import Moment from "react-moment";
+import { Ring } from "@uiball/loaders";
 
 export default function DetailBlog() {
+  const { id } = useParams();
+  const dispatch = useDispatch();
+  const { blog } = useSelector((state) => state.detailBlogReducer);
+  const img_url = `${process.env.REACT_APP_API_URL}/${blog.image}`;
+
+  console.log(blog);
+  useEffect(() => {
+    dispatch(getBlogById(id));
+  }, [dispatch, id]);
+
   return (
     <section className="detail-blog-wrapper">
-      <img className="img-cover" src={blogImg} alt="" />
-      <h1 className="title">Lorem ipsum dolor sit amet.</h1>
-      <p className="detail-author">Author &bull; Date</p>
-      <div className="detail-body">
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus
-          molestias quaerat ullam autem consectetur dolor consequatur sed sit
-          non sequi error eos suscipit, fuga illo cumque. Modi voluptatem sed
-          earum? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Libero, fugit! Quisquam, assumenda. Reprehenderit, quis delectus
-          dignissimos esse commodi ut voluptatum similique nihil quod nisi
-          voluptas dolorem veniam ullam sint repudiandae. Lorem ipsum dolor sit
-          amet, consectetur adipisicing elit. Inventore ducimus perferendis esse
-          possimus fuga quasi, nesciunt voluptatibus totam placeat corporis?
-          Odit repudiandae at ipsum unde quo, deleniti repellendus modi
-          accusantium.
-        </p>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus
-          molestias quaerat ullam autem consectetur dolor consequatur sed sit
-          non sequi error eos suscipit, fuga illo cumque. Modi voluptatem sed
-          earum? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Libero, fugit! Quisquam, assumenda. Reprehenderit, quis delectus
-          dignissimos esse commodi ut voluptatum similique nihil quod nisi
-          voluptas dolorem veniam ullam sint repudiandae. Lorem ipsum dolor sit
-          amet, consectetur adipisicing elit. Inventore ducimus perferendis esse
-          possimus fuga quasi, nesciunt voluptatibus totam placeat corporis?
-          Odit repudiandae at ipsum unde quo, deleniti repellendus modi
-          accusantium.
-        </p>
-      </div>
+      {blog.author ? (
+        <>
+          <img className="img-cover" src={img_url} alt="" />
+          <h1 className="title">{blog.title}</h1>
+          <p className="detail-author">
+            {blog.author.name} &bull; <Moment fromNow>{blog.updatedAt}</Moment>
+          </p>
+          <div className="detail-body">
+            <div
+              className="body"
+              dangerouslySetInnerHTML={{ __html: blog.body }}
+            />
+          </div>
+        </>
+      ) : (
+        <div className="ring-detail">
+          <Ring size={50} lineWeight={5} speed={2} color="#5429ff" />
+        </div>
+      )}
     </section>
   );
 }

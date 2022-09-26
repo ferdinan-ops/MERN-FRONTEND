@@ -1,4 +1,12 @@
 .detail-blog-wrapper {
+  .ring-detail {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .img-cover {
     width: 100%;
     height: 300px;

@@ -20,10 +20,69 @@
     transform: translateY(-3px);
   }
 
-  .image-thumb {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+  .head-card-wrapper {
+    position: relative;
+
+    .image-thumb {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .more {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      position: absolute;
+      right: 16px;
+      top: 16px;
+      transition: 0.2s ease-in-out;
+
+      &:hover {
+        background-color: rgb(82, 82, 82);
+      }
+
+      .more-wrapper {
+        position: relative;
+        .more-icon-wrapper {
+          display: flex;
+          gap: 2px;
+          cursor: pointer;
+
+          span {
+            display: inline-block;
+            background: #fff;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+          }
+        }
+
+        .more-menu {
+          position: absolute;
+          background-color: #fff;
+          right: 0;
+          top: 15px;
+          border-radius: 5px;
+          display: none;
+
+          p {
+            padding: 10px 20px;
+            font-weight: 500;
+
+            &:hover {
+              background-color: rgb(219, 219, 219);
+            }
+          }
+        }
+        .more-menu.show {
+          display: block;
+        }
+      }
+    }
   }
 
   .content-detail {

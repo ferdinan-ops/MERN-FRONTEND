@@ -15,6 +15,11 @@ body,
   min-width: 100%;
 }
 
+.toaster {
+  z-index: 99999999;
+  position: relative;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,

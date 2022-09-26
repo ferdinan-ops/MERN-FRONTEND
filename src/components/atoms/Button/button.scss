@@ -9,21 +9,25 @@
   border: none;
   padding: 12px 0;
   border-radius: 8px;
-  //   margin-top: 32px;
   background-color: #5429ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   &:hover {
     background-color: #461ee7;
   }
 }
+
+.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
 .google-button {
   background-color: #fff;
   color: #344054;
   border: 1px solid #d0d5dd;
-  //   margin-top: 0;
-  //   margin-top: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 8px;
   padding: 0;
   padding: 10px 0;

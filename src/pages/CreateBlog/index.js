@@ -1,28 +1,48 @@
-import React from "react";
-import "./createBlog.scss";
-import { Button, Gap, Input, TinyEditor, Upload } from "../../components";
-import { useDispatch, useSelector } from "react-redux";
 import {
   createBlogAPI,
+  getBlogById,
   setForm,
   setImgPreview,
 } from "../../config/redux/action";
+import { Button, Gap, Input, TinyEditor, Upload } from "../../components";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+import "./createBlog.scss";
+import { useEffect, useState } from "react";
+
+const BASE_URL = process.env.REACT_APP_API_URL;
 
 export default function CreateBlog() {
   // const [title, setTitle] = useState("");
   // const [body, setBody] = useState("");
   // const [image, setImage] = useState(null);
   // const [imagePreview, setImagePreview] = useState(null);
+  // const [isLoading, setIsLoading] = useState(false);
 
+  const { id } = useParams();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { form, imgPreview } = useSelector((state) => state.createBlogReducer);
+  const { buttonLoading } = useSelector((state) => state.globalReducer);
+  const { blog } = useSelector((state) => state.detailBlogReducer);
   const { title, body } = form;
 
-  console.log({ title, body });
+  const [isUpdate, setIsUpdate] = useState(false);
+  useEffect(() => {
+    if (id) {
+      dispatch(getBlogById(id));
+      setIsUpdate(true);
+      dispatch(setForm("title", blog.title));
+      dispatch(setForm("body", blog.body));
+      dispatch(setImgPreview(`${BASE_URL}/${blog.image}`));
+    }
+  }, [dispatch, id, blog]);
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    createBlogAPI(form);
+    dispatch(createBlogAPI(form));
+    navigate("/");
+
     // // Jadi kita menggunakan FormData() saat kita mau mengirimkan file ke server.
     // const newData = new FormData();
     // newData.append("title", title);
@@ -51,7 +71,7 @@ export default function CreateBlog() {
 
   return (
     <form className="create-blog" onSubmit={submitHandler}>
-      <h4 className="title">Create New Blog</h4>
+      <h4 className="title">{isUpdate ? "Update" : "Create"} New Blog</h4>
       <Gap height={20} />
       <Input
         label="Title"
@@ -68,7 +88,10 @@ export default function CreateBlog() {
       <Upload onChange={imageUploadHandler} img={imgPreview} />
       <Gap height={30} />
       <div className="save-button">
-        <Button title="Save" />
+        <Button
+          title={isUpdate ? "Update" : "Save"}
+          isLoading={buttonLoading}
+        />
       </div>
     </form>
   );

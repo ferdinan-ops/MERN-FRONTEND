@@ -13,8 +13,9 @@ export default function MainApp() {
       <div className="content-wrapper">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/create-blog" element={<CreateBlog />} />
-          <Route path="/detail-blog" element={<DetailBlog />} />
+          <Route path="/update-blog/:id" element={<CreateBlog />} />
+          <Route path="/create-blog/" element={<CreateBlog />} />
+          <Route path="/detail-blog/:id" element={<DetailBlog />} />
         </Routes>
       </div>
       <Footer />
