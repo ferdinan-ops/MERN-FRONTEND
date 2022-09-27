@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import "./createBlog.scss";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 const BASE_URL = process.env.REACT_APP_API_URL;
 
@@ -24,23 +25,30 @@ export default function CreateBlog() {
   const dispatch = useDispatch();
   const { form, imgPreview } = useSelector((state) => state.createBlogReducer);
   const { buttonLoading } = useSelector((state) => state.globalReducer);
-  const { blog } = useSelector((state) => state.detailBlogReducer);
   const { title, body } = form;
 
   const [isUpdate, setIsUpdate] = useState(false);
+
   useEffect(() => {
-    if (id) {
-      dispatch(getBlogById(id));
-      setIsUpdate(true);
-      dispatch(setForm("title", blog.title));
-      dispatch(setForm("body", blog.body));
-      dispatch(setImgPreview(`${BASE_URL}/${blog.image}`));
+    async function getDataById() {
+      const { data } = await axios.get(`${BASE_URL}/v1/blog/post/${id}`);
+      const setData = data.data;
+      dispatch(setForm("title", setData.title));
+      dispatch(setForm("body", setData.body));
+      dispatch(setImgPreview(`${BASE_URL}/${setData.image}`));
     }
-  }, [dispatch, id, blog]);
+    if (id) {
+      setIsUpdate(true);
+      getDataById();
+    }
+  }, []);
 
   const submitHandler = async (e) => {
     e.preventDefault();
     dispatch(createBlogAPI(form));
+    dispatch(setForm("title", ""));
+    dispatch(setForm("body", ""));
+    dispatch(setImgPreview(""));
     navigate("/");
 
     // // Jadi kita menggunakan FormData() saat kita mau mengirimkan file ke server.
