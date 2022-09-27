@@ -8,7 +8,6 @@ import "./home.scss";
 const BASE_URL_API = process.env.REACT_APP_API_URL;
 
 export default function Home() {
-  // const [blogs, setBlogs] = useState([])
   const [counter, setCounter] = useState(1);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -25,13 +24,6 @@ export default function Home() {
   };
 
   useEffect(() => {
-    // const getAllBlog = async () => {
-    //   const url = BASE_URL_API + "/v1/blog/posts?perPage=6";
-    //   const { data } = await axios.get(url);
-    //   dispatch({ type: "UPDATE_BLOG", payload: data.data });
-    //   // setBlogs(data.data);
-    // };
-    // getAllBlog();
     dispatch(setBlogs(counter));
   }, [dispatch, counter]);
 
